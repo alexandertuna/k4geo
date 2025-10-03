@@ -98,6 +98,7 @@
 				<rphi_layout phi_tilt="0*deg" nphi="15*2" phi0="0" rc="InnerTracker_Barrel_radius_0 + InnerTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
 				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_0 - 15.05*mm" nz="32"/>
 			</layer>
+
 			<layer module="InnerTrackerBarrelModule_01" id="2" >
 				<rphi_layout phi_tilt="0*deg" nphi="20*2" phi0="0" rc="InnerTracker_Barrel_radius_1" dr="4.0*mm"/>
 				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_1 - 15.05*mm" nz="32"/>
@@ -106,6 +107,7 @@
 				<rphi_layout phi_tilt="0*deg" nphi="20*2" phi0="0" rc="InnerTracker_Barrel_radius_1 + InnerTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
 				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_1 - 15.05*mm" nz="32"/>
 			</layer>
+
 			<layer module="InnerTrackerBarrelModule_01" id="4" >
 				<rphi_layout phi_tilt="0*deg" nphi="58*2" phi0="0" rc="InnerTracker_Barrel_radius_2" dr="4.0*mm"/>
 				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_2 - 15.05*mm" nz="46"/>
@@ -114,6 +116,7 @@
 				<rphi_layout phi_tilt="0*deg" nphi="58*2" phi0="0" rc="InnerTracker_Barrel_radius_2 + InnerTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
 				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_2 - 15.05*mm" nz="46"/>
 			</layer>
+
 			<layer module="InnerTrackerBarrelModule_01" id="6" >
 				<rphi_layout phi_tilt="0*deg" nphi="62*2" phi0="0" rc="InnerTracker_Barrel_radius_3" dr="4.0*mm"/>
 				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_3 - 15.05*mm" nz="46"/>
@@ -362,18 +365,39 @@
 			<envelope>
 				<shape type="Assembly"/>
 			</envelope>
-			<layer id="1" inner_r="InnerTracker_Barrel_radius_0+0.5*cm" outer_z="InnerTracker_Barrel_half_length_0" vis="SupportVis">
+
+			<layer id="1" inner_r="InnerTracker_Barrel_radius_0+12*mm" outer_z="InnerTracker_Barrel_half_length_0" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.17/3.5959*cm" />
 			</layer>
-			<layer id="2" inner_r="InnerTracker_Barrel_radius_1+0.5*cm" outer_z="InnerTracker_Barrel_half_length_1" vis="SupportVis">
+			<layer id="2" inner_r="InnerTracker_Barrel_radius_0-4*mm" outer_z="InnerTracker_Barrel_half_length_0" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.17/3.5959*cm" />
 			</layer>
-			<layer id="3" inner_r="InnerTracker_Barrel_radius_2+0.5*cm" outer_z="InnerTracker_Barrel_half_length_2" vis="SupportVis">
+
+			<layer id="3" inner_r="InnerTracker_Barrel_radius_1+12*mm" outer_z="InnerTracker_Barrel_half_length_1" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.17/3.5959*cm" />
 			</layer>
-			<layer id="4" inner_r="InnerTracker_outer_radius-1*cm" outer_z="InnerTracker_half_length" vis="SupportVis">
+			<layer id="4" inner_r="InnerTracker_Barrel_radius_1-4*mm" outer_z="InnerTracker_Barrel_half_length_1" vis="SupportVis">
+				<slice material="CarbonFiber" thickness="0.17/3.5959*cm" />
+			</layer>
+
+			<layer id="5" inner_r="InnerTracker_Barrel_radius_2+14*mm" outer_z="InnerTracker_Barrel_half_length_2" vis="SupportVis">
+				<slice material="CarbonFiber" thickness="0.17/3.5959*cm" />
+			</layer>
+			<layer id="6" inner_r="InnerTracker_Barrel_radius_2-2*mm" outer_z="InnerTracker_Barrel_half_length_2" vis="SupportVis">
+				<slice material="CarbonFiber" thickness="0.17/3.5959*cm" />
+			</layer>
+
+			<layer id="6" inner_r="InnerTracker_Barrel_radius_3+14*mm" outer_z="InnerTracker_Barrel_half_length_3" vis="SupportVis">
+				<slice material="CarbonFiber" thickness="0.17/3.5959*cm" />
+			</layer>
+			<layer id="7" inner_r="InnerTracker_Barrel_radius_3-2*mm" outer_z="InnerTracker_Barrel_half_length_3" vis="SupportVis">
+				<slice material="CarbonFiber" thickness="0.17/3.5959*cm" />
+			</layer>
+
+			<layer id="8" inner_r="InnerTracker_outer_radius-1*cm" outer_z="InnerTracker_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="1.25/3.5959*cm" />
 			</layer>
+
 			<comment>3.5959*cm = X0 for Carbon fibre</comment>
 		</detector>
 
