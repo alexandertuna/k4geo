@@ -1,9 +1,12 @@
 <lccdd>
 
 	<define>
+		<constant name="OuterTracker_Barrel_DoubleLayer_Gap" value="6.0*mm"/>
+
 		<constant name="OuterTracker_Barrel_radius_0" value="819*mm"/>
-		<constant name="OuterTracker_Barrel_radius_1" value="1153*mm"/>
-		<constant name="OuterTracker_Barrel_radius_2" value="1486*mm"/>
+		<constant name="OuterTracker_Barrel_radius_1" value="899*mm"/>
+		<constant name="OuterTracker_Barrel_radius_2" value="1406*mm"/>
+		<constant name="OuterTracker_Barrel_radius_3" value="1486*mm"/>
 
 		<constant name="OuterTracker_Barrel_half_length" value="1264.2*mm"/>
 
@@ -74,19 +77,42 @@
 				<include ref="OuterTrackerBarrelModuleDown.xml"/>
 			</module>
 
-
 			<layer module="OuterTrackerBarrelModule_In" id="0" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="46*4" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="5.5*mm"/>
+				<rphi_layout phi_tilt="0*deg" nphi="46*4" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="12*mm"/>
 				<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/>
 			</layer>
-			<layer module="OuterTrackerBarrelModule_In" id="1" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="64*4" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="5.5*mm"/>
+			<layer module="OuterTrackerBarrelModule_Out" id="1" vis="OuterTrackerLayerVis" type="4">
+				<rphi_layout phi_tilt="0*deg" nphi="46*4" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="12*mm"/>
 				<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/>
 			</layer>
-			<layer module="OuterTrackerBarrelModule_Out" id="2" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="82*4" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="5.5*mm"/>
+
+			<layer module="OuterTrackerBarrelModule_In" id="2" vis="OuterTrackerLayerVis" type="4">
+				<rphi_layout phi_tilt="0*deg" nphi="54*4" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="12*mm"/>
 				<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/>
 			</layer>
+			<layer module="OuterTrackerBarrelModule_Out" id="3" vis="OuterTrackerLayerVis" type="4">
+				<rphi_layout phi_tilt="0*deg" nphi="54*4" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="12*mm"/>
+				<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/>
+			</layer>
+
+			<layer module="OuterTrackerBarrelModule_In" id="4" vis="OuterTrackerLayerVis" type="4">
+				<rphi_layout phi_tilt="0*deg" nphi="78*4" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="12*mm"/>
+				<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/>
+			</layer>
+			<layer module="OuterTrackerBarrelModule_Out" id="5" vis="OuterTrackerLayerVis" type="4">
+				<rphi_layout phi_tilt="0*deg" nphi="78*4" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="12*mm"/>
+				<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/>
+			</layer>
+
+			<layer module="OuterTrackerBarrelModule_In" id="6" vis="OuterTrackerLayerVis" type="4">
+				<rphi_layout phi_tilt="0*deg" nphi="82*4" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="12*mm"/>
+				<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/>
+			</layer>
+			<layer module="OuterTrackerBarrelModule_Out" id="7" vis="OuterTrackerLayerVis" type="4">
+				<rphi_layout phi_tilt="0*deg" nphi="82*4" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="12*mm"/>
+				<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/>
+			</layer>
+
 		</detector>
 
 
