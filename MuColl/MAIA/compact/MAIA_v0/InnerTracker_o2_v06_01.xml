@@ -99,32 +99,32 @@
 				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_0 - 15.05*mm" nz="32"/>
 			</layer>
 
-			<layer module="InnerTrackerBarrelModule_01" id="2" >
-				<rphi_layout phi_tilt="0*deg" nphi="20*2" phi0="0" rc="InnerTracker_Barrel_radius_1" dr="4.0*mm"/>
-				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_1 - 15.05*mm" nz="32"/>
-			</layer>
-			<layer module="InnerTrackerBarrelModule_01" id="3" >
-				<rphi_layout phi_tilt="0*deg" nphi="20*2" phi0="0" rc="InnerTracker_Barrel_radius_1 + InnerTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
-				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_1 - 15.05*mm" nz="32"/>
-			</layer>
+			<!-- <layer module="InnerTrackerBarrelModule_01" id="2" > -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="20*2" phi0="0" rc="InnerTracker_Barrel_radius_1" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="InnerTracker_Barrel_half_length_1 - 15.05*mm" nz="32"/> -->
+			<!-- </layer> -->
+			<!-- <layer module="InnerTrackerBarrelModule_01" id="3" > -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="20*2" phi0="0" rc="InnerTracker_Barrel_radius_1 + InnerTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="InnerTracker_Barrel_half_length_1 - 15.05*mm" nz="32"/> -->
+			<!-- </layer> -->
 
-			<layer module="InnerTrackerBarrelModule_01" id="4" >
-				<rphi_layout phi_tilt="0*deg" nphi="58*2" phi0="0" rc="InnerTracker_Barrel_radius_2" dr="4.0*mm"/>
-				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_2 - 15.05*mm" nz="46"/>
-			</layer>
-			<layer module="InnerTrackerBarrelModule_01" id="5" >
-				<rphi_layout phi_tilt="0*deg" nphi="58*2" phi0="0" rc="InnerTracker_Barrel_radius_2 + InnerTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
-				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_2 - 15.05*mm" nz="46"/>
-			</layer>
+			<!-- <layer module="InnerTrackerBarrelModule_01" id="4" > -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="58*2" phi0="0" rc="InnerTracker_Barrel_radius_2" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="InnerTracker_Barrel_half_length_2 - 15.05*mm" nz="46"/> -->
+			<!-- </layer> -->
+			<!-- <layer module="InnerTrackerBarrelModule_01" id="5" > -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="58*2" phi0="0" rc="InnerTracker_Barrel_radius_2 + InnerTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="InnerTracker_Barrel_half_length_2 - 15.05*mm" nz="46"/> -->
+			<!-- </layer> -->
 
-			<layer module="InnerTrackerBarrelModule_01" id="6" >
-				<rphi_layout phi_tilt="0*deg" nphi="62*2" phi0="0" rc="InnerTracker_Barrel_radius_3" dr="4.0*mm"/>
-				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_3 - 15.05*mm" nz="46"/>
-			</layer>
-			<layer module="InnerTrackerBarrelModule_01" id="7" >
-				<rphi_layout phi_tilt="0*deg" nphi="62*2" phi0="0" rc="InnerTracker_Barrel_radius_3 + InnerTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
-				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_3 - 15.05*mm" nz="46"/>
-			</layer>
+			<!-- <layer module="InnerTrackerBarrelModule_01" id="6" > -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="62*2" phi0="0" rc="InnerTracker_Barrel_radius_3" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="InnerTracker_Barrel_half_length_3 - 15.05*mm" nz="46"/> -->
+			<!-- </layer> -->
+			<!-- <layer module="InnerTrackerBarrelModule_01" id="7" > -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="62*2" phi0="0" rc="InnerTracker_Barrel_radius_3 + InnerTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="InnerTracker_Barrel_half_length_3 - 15.05*mm" nz="46"/> -->
+			<!-- </layer> -->
 		</detector>
 
 
