@@ -81,38 +81,38 @@
 
 			<layer module="OuterTrackerBarrelModule_In" id="0" vis="OuterTrackerLayerVis" type="4">
 				<rphi_layout phi_tilt="0*deg" nphi="46*4" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="4.0*mm"/>
-				<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/>
+				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 15.05*mm" nz="84"/>
 			</layer>
 			<layer module="OuterTrackerBarrelModule_Out" id="1" vis="OuterTrackerLayerVis" type="4">
 				<rphi_layout phi_tilt="0*deg" nphi="46*4" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
-				<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/>
+				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 15.05*mm" nz="84"/>
 			</layer>
 
 			<!-- <layer module="OuterTrackerBarrelModule_In" id="2" vis="OuterTrackerLayerVis" type="4"> -->
-			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="54*4" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="12*mm"/> -->
-			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/> -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="54*4" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 15.05*mm" nz="84"/> -->
 			<!-- </layer> -->
 			<!-- <layer module="OuterTrackerBarrelModule_Out" id="3" vis="OuterTrackerLayerVis" type="4"> -->
-			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="54*4" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="12*mm"/> -->
-			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/> -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="54*4" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 15.05*mm" nz="84"/> -->
 			<!-- </layer> -->
 
 			<!-- <layer module="OuterTrackerBarrelModule_In" id="4" vis="OuterTrackerLayerVis" type="4"> -->
-			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="78*4" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="12*mm"/> -->
-			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/> -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="78*4" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 15.05*mm" nz="84"/> -->
 			<!-- </layer> -->
 			<!-- <layer module="OuterTrackerBarrelModule_Out" id="5" vis="OuterTrackerLayerVis" type="4"> -->
-			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="78*4" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="12*mm"/> -->
-			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/> -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="78*4" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 15.05*mm" nz="84"/> -->
 			<!-- </layer> -->
 
 			<!-- <layer module="OuterTrackerBarrelModule_In" id="6" vis="OuterTrackerLayerVis" type="4"> -->
-			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="82*4" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="12*mm"/> -->
-			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/> -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="82*4" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 15.05*mm" nz="84"/> -->
 			<!-- </layer> -->
 			<!-- <layer module="OuterTrackerBarrelModule_Out" id="7" vis="OuterTrackerLayerVis" type="4"> -->
-			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="82*4" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="12*mm"/> -->
-			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length-15.05*mm" nz="84"/> -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="82*4" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 15.05*mm" nz="84"/> -->
 			<!-- </layer> -->
 
 		</detector>
@@ -180,28 +180,29 @@
 			<envelope>
 				<shape type="Assembly"/>
 			</envelope>
-			<layer id="0" inner_r="OuterTracker_Barrel_radius_0+12*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
+
+			<layer id="0" inner_r="OuterTracker_Barrel_radius_0+14*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.26/3.5959*cm" />
 			</layer>
 			<layer id="1" inner_r="OuterTracker_Barrel_radius_0-4*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.26/3.5959*cm" />
 			</layer>
 
-			<layer id="2" inner_r="OuterTracker_Barrel_radius_1+12*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
+			<layer id="2" inner_r="OuterTracker_Barrel_radius_1+14*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.125/3.5959*cm" />
 			</layer>
 			<layer id="3" inner_r="OuterTracker_Barrel_radius_1-4*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.125/3.5959*cm" />
 			</layer>
 
-			<layer id="4" inner_r="OuterTracker_Barrel_radius_2+12*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
+			<layer id="4" inner_r="OuterTracker_Barrel_radius_2+14*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.125/3.5959*cm" />
 			</layer>
 			<layer id="5" inner_r="OuterTracker_Barrel_radius_2-4*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.125/3.5959*cm" />
 			</layer>
 
-			<layer id="6" inner_r="OuterTracker_Barrel_radius_3+12*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
+			<layer id="6" inner_r="OuterTracker_Barrel_radius_3+14*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.125/3.5959*cm" />
 			</layer>
 			<layer id="7" inner_r="OuterTracker_Barrel_radius_3-4*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
