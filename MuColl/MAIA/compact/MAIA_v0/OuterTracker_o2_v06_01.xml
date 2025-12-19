@@ -181,28 +181,28 @@
 				<shape type="Assembly"/>
 			</envelope>
 
-			<layer id="0" inner_r="OuterTracker_Barrel_radius_0+14*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
+			<layer id="0" inner_r="OuterTracker_Barrel_radius_0+18*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.26/3.5959*cm" />
 			</layer>
 			<layer id="1" inner_r="OuterTracker_Barrel_radius_0-4*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.26/3.5959*cm" />
 			</layer>
 
-			<layer id="2" inner_r="OuterTracker_Barrel_radius_1+14*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
+			<layer id="2" inner_r="OuterTracker_Barrel_radius_1+18*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.125/3.5959*cm" />
 			</layer>
 			<layer id="3" inner_r="OuterTracker_Barrel_radius_1-4*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.125/3.5959*cm" />
 			</layer>
 
-			<layer id="4" inner_r="OuterTracker_Barrel_radius_2+14*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
+			<layer id="4" inner_r="OuterTracker_Barrel_radius_2+18*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.125/3.5959*cm" />
 			</layer>
 			<layer id="5" inner_r="OuterTracker_Barrel_radius_2-4*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.125/3.5959*cm" />
 			</layer>
 
-			<layer id="6" inner_r="OuterTracker_Barrel_radius_3+14*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
+			<layer id="6" inner_r="OuterTracker_Barrel_radius_3+18*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
 				<slice material="CarbonFiber" thickness="0.125/3.5959*cm" />
 			</layer>
 			<layer id="7" inner_r="OuterTracker_Barrel_radius_3-4*mm" outer_z="OuterTracker_Barrel_half_length" vis="SupportVis">
