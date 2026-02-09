@@ -22,43 +22,4 @@
 		</readout>
 	</readouts>
 
-	<detectors>
-		<detector id="DetID_HCAL_Barrel" name="HCalBarrel" type="GenericCalBarrel_o1_v01" readout="HCalBarrelCollection"
-			vis="HCALVis" calorimeterType="HAD_BARREL" gap="0.*cm" material="Steel235">
-
-			<comment>Hadron Calorimeter: Barrel</comment>
-
-			<type_flags type="DetType_CALORIMETER + DetType_HADRONIC + DetType_BARREL"/>
-
-			<envelope vis="HCALVis">
-				<shape type="PolyhedraRegular" numsides="HCalBarrel_symmetry"  rmin="HCalBarrel_inner_radius-10*env_safety" rmax="HCalBarrel_outer_radius+10*env_safety" dz="HCalBarrel_half_length*2+5*env_safety" material = "Air"/>
-				<rotation x="0*deg" y="0*deg" z="90*deg-180*deg/HCalBarrel_symmetry"/>
-			</envelope>
-
-			<dimensions numsides="HCalBarrel_symmetry" rmin="HCalBarrel_inner_radius" z="HCalBarrel_half_length*2"/>
-			<staves vis="HCalStavesVis"/>
-			<layer repeat="(int) HCalBarrel_layers" vis="HCalLayerVis">
-				<slice material="Steel235"       thickness="0.5*mm" radiator="yes" vis="HCalAbsorberVis"/>
-				<slice material="Steel235"       thickness="19*mm"  radiator="yes" vis="HCalAbsorberVis"/>
-				<slice material="G4_POLYSTYRENE" thickness="3*mm"   sensitive="yes" limits="cal_limits" vis="HCalSensorVis"/>
-				<slice material="Copper"         thickness="0.1*mm" vis="HCalCopperVis"/>
-				<slice material="PCB"            thickness="0.7*mm" vis="HCalPCBVis"/>
-				<slice material="Steel235"       thickness="0.5*mm" radiator="yes" vis="HCalAbsorberVis"/>
-				<slice material="Air"            thickness="2.7*mm" vis="InvisibleNoDaughters"/>
-			</layer>
-		</detector>
-
-	</detectors>
-
-	<plugins>
-		<plugin name="DD4hep_CaloFaceBarrelSurfacePlugin">
-			<argument value="HCalBarrel"/>
-			<argument value="length=2.*HCalBarrel_half_length"    />
-			<argument value="radius=HCalBarrel_inner_radius"  />
-			<argument value="phi0=0"    />
-			<argument value="symmetry=HCalBarrel_symmetry"/>
-			<argument value="systemID=DetID_HCAL_Barrel"/>
-		</plugin>
-	</plugins>
-
 </lccdd>
