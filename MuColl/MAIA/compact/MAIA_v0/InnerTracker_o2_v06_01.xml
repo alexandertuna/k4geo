@@ -102,6 +102,8 @@
 
 		</detector>
 
+	</detectors>
+
 	<plugins>
 		<plugin name="DD4hep_GenericSurfaceInstallerPlugin">
 			<argument value="InnerTrackerBarrel"/>
