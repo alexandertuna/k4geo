@@ -90,10 +90,6 @@
 				<include ref="InnerTrackerBarrelModuleDown.xml"/>
 			</module>
 
-			<layer module="InnerTrackerBarrelModule_01" id="0" type="1" >
-				<rphi_layout phi_tilt="0*deg" nphi="15*2" phi0="0" rc="InnerTracker_Barrel_radius_0" dr="4.0*mm"/>
-				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_0 - 15.05*mm" nz="32"/>
-			</layer>
 			<layer module="InnerTrackerBarrelModule_01" id="1" >
 				<rphi_layout phi_tilt="0*deg" nphi="15*2" phi0="0" rc="InnerTracker_Barrel_radius_0 + InnerTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
 				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_0 - 15.05*mm" nz="32"/>
