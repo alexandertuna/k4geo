@@ -11,18 +11,4 @@
     </display>
     
     
-    <detectors>
-        <comment>Beampipe</comment>
-        
-        <detector name="Beampipe" type="DD4hep_Beampipe_o1_v01" insideTrackingVolume="true" nocore="true" vis="BeamPipeVis">
-            <parameter crossingangle="CrossingAngle" />
-            <envelope vis="BlueVis">
-                <shape type="Assembly"/>
-            </envelope>
-
-            <section type="Center" start="0*mm" end="Nozzle_zmin" rMin1="Beampipe_inner_radius" rMin2="Beampipe_inner_radius" rMax1="Beampipe_outer_radius" rMax2="Beampipe_outer_radius" material="Beryllium" name="VertexInnerBe" />
-
-        </detector>
-        
-    </detectors>
 </lccdd>
