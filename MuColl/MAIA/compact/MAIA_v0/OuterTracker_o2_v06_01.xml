@@ -4,8 +4,8 @@
 		<constant name="OuterTracker_Barrel_DoubleLayer_Gap" value="2.0*mm"/>
 
 		<constant name="OuterTracker_Barrel_radius_0" value="819*mm"/>
-		<constant name="OuterTracker_Barrel_radius_1" value="899*mm"/>
-		<constant name="OuterTracker_Barrel_radius_2" value="1366*mm"/>
+		<constant name="OuterTracker_Barrel_radius_1" value="1028*mm"/>
+		<constant name="OuterTracker_Barrel_radius_2" value="1237*mm"/>
 		<constant name="OuterTracker_Barrel_radius_3" value="1446*mm"/>
 
 		<constant name="OuterTracker_Barrel_half_length" value="1264.2*mm"/>
@@ -89,20 +89,20 @@
 			</layer>
 
 			<layer module="OuterTrackerBarrelModule_In" id="2" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="52*2" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="4.0*mm"/>
+				<rphi_layout phi_tilt="0*deg" nphi="60*2" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="4.0*mm"/>
 				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="84/2"/>
 			</layer>
 			<layer module="OuterTrackerBarrelModule_In" id="3" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="52*2" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
+				<rphi_layout phi_tilt="0*deg" nphi="60*2" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
 				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="84/2"/>
 			</layer>
 
 			<layer module="OuterTrackerBarrelModule_In" id="4" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="80*2" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="4.0*mm"/>
+				<rphi_layout phi_tilt="0*deg" nphi="72*2" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="4.0*mm"/>
 				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="84/2"/>
 			</layer>
 			<layer module="OuterTrackerBarrelModule_In" id="5" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="80*2" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
+				<rphi_layout phi_tilt="0*deg" nphi="72*2" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
 				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="84/2"/>
 			</layer>
 
