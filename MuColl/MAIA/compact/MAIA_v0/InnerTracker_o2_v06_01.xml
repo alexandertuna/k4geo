@@ -4,8 +4,8 @@
 		<constant name="InnerTracker_Barrel_DoubleLayer_Gap" value="2.0*mm"/>
 
 		<constant name="InnerTracker_Barrel_radius_0" value="127*mm"/>
-		<constant name="InnerTracker_Barrel_radius_1" value="167*mm"/>
-		<constant name="InnerTracker_Barrel_radius_2" value="510*mm"/>
+		<constant name="InnerTracker_Barrel_radius_1" value="268*mm"/>
+		<constant name="InnerTracker_Barrel_radius_2" value="409*mm"/>
 		<constant name="InnerTracker_Barrel_radius_3" value="550*mm"/>
 
 		<constant name="InnerTracker_Barrel_half_length_0" value="481.6*mm"/>
