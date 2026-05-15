@@ -110,11 +110,11 @@
 
 			<layer module="InnerTrackerBarrelModule_01" id="4" >
 				<rphi_layout phi_tilt="0*deg" nphi="46*2" phi0="0" rc="InnerTracker_Barrel_radius_2" dr="4.0*mm"/>
-				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_2 - 15.05*mm" nz="46"/>
+				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_2 - 15.05*mm" nz="32"/>
 			</layer>
 			<layer module="InnerTrackerBarrelModule_01" id="5" >
 				<rphi_layout phi_tilt="0*deg" nphi="46*2" phi0="0" rc="InnerTracker_Barrel_radius_2 + InnerTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
-				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_2 - 15.05*mm" nz="46"/>
+				<z_layout dr="0" z0="InnerTracker_Barrel_half_length_2 - 15.05*mm" nz="32"/>
 			</layer>
 
 			<layer module="InnerTrackerBarrelModule_01" id="6" >
