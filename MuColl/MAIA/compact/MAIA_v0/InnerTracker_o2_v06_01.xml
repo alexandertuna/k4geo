@@ -445,7 +445,7 @@
 			<envelope>
 				<shape type="Assembly"/>
 			</envelope>
-			<section start="InnerTracker_Barrel_half_length_1+2*cm"  end="InnerTracker_Barrel_half_length_2+2*cm"        rMin="InnerTracker_Barrel_radius_2-2*cm"  rMax="InnerTracker_Barrel_radius_2-2*cm+0.6/3.5959*cm"  material="CarbonFiber" name="InterlinkTube" vis="InterlinkVis"/>
+			<section start="InnerTracker_Barrel_half_length_1+2*cm"  end="InnerTracker_Barrel_half_length_3+2*cm"        rMin="InnerTracker_Barrel_radius_3-2*cm"  rMax="InnerTracker_Barrel_radius_3-2*cm+0.6/3.5959*cm"  material="CarbonFiber" name="InterlinkTube" vis="InterlinkVis"/>
 		</detector>
 
 		<detector name="InnerTrackerVertexCable" type="TubeSupport_o1_v01" reflect="true" region="BeampipeRegion">
