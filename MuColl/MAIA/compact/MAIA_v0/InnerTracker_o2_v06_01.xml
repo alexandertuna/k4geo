@@ -10,7 +10,7 @@
 
 		<constant name="InnerTracker_Barrel_half_length_0" value="481.6*mm"/>
 		<constant name="InnerTracker_Barrel_half_length_1" value="481.6*mm"/>
-		<constant name="InnerTracker_Barrel_half_length_2" value="692.3*mm"/>
+		<constant name="InnerTracker_Barrel_half_length_2" value="481.6*mm"/>
 		<constant name="InnerTracker_Barrel_half_length_3" value="692.3*mm"/>
 
 		<constant name="InnerTracker_Endcap_z_0" value="524*mm"/>
