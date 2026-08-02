@@ -68,10 +68,10 @@
 	<!--  Definition of the readout segmentation  -->
 	<readouts>
 		<readout name="InnerTrackerBarrelCollection">
-			<id>${GlobalTrackerReadoutID}</id>
+			<id>${StaggeredTrackerReadoutID}</id>
 		</readout>
 		<readout name="InnerTrackerEndcapCollection">
-			<id>${GlobalTrackerReadoutID}</id>
+			<id>${StaggeredTrackerReadoutID}</id>
 		</readout>
 	</readouts>
 
