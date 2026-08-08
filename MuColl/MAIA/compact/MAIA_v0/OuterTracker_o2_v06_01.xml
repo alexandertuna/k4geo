@@ -3,10 +3,16 @@
 	<define>
 		<constant name="OuterTracker_Barrel_DoubleLayer_Gap" value="2.0*mm"/>
 
-		<constant name="OuterTracker_Barrel_radius_0" value="819*mm"/>
-		<constant name="OuterTracker_Barrel_radius_1" value="899*mm"/>
-		<constant name="OuterTracker_Barrel_radius_2" value="1366*mm"/>
-		<constant name="OuterTracker_Barrel_radius_3" value="1446*mm"/>
+        <constant name="OuterTracker_Barrel_radius_0" value="819.0*mm"/>
+        <constant name="OuterTracker_Barrel_radius_0_z_staggered" value="823.0*mm"/>
+        <constant name="OuterTracker_Barrel_radius_1" value="899.0*mm"/>
+        <constant name="OuterTracker_Barrel_radius_1_z_staggered" value="903.0*mm"/>
+        <constant name="OuterTracker_Barrel_radius_2" value="1358.0*mm"/>
+        <constant name="OuterTracker_Barrel_radius_2_z_staggered" value="1362.0*mm"/>
+        <constant name="OuterTracker_Barrel_radius_3" value="1438.0*mm"/>
+        <constant name="OuterTracker_Barrel_radius_3_z_staggered" value="1442.0*mm"/>
+        <constant name="OuterTracker_Barrel_OriginalSensorLength" value="60.2*mm"/>
+        <constant name="OuterTracker_Barrel_SensorLength" value="62.6*mm"/>
 
 		<constant name="OuterTracker_Barrel_half_length" value="1264.2*mm"/>
 
@@ -52,7 +58,7 @@
 			<id>${StaggeredTrackerReadoutID}</id>
 		</readout>
 		<readout name="OuterTrackerEndcapCollection">
-			<id>${StaggeredTrackerReadoutID}</id>
+			<id>${GlobalTrackerReadoutID}</id>
 		</readout>
 	</readouts>
 
@@ -68,52 +74,1701 @@
 			<type_flags type=" DetType_TRACKER + DetType_BARREL"/>
 
 			<module name="OuterTrackerBarrelModule_In" vis="OuterTrackerModuleVis">
-				<module_envelope width="60.2*mm" length="60.2*mm"/>
+				<module_envelope width="60.2*mm" length="OuterTracker_Barrel_SensorLength"/>
 				<!-- NB: using InnerTracker defintion with 2mm thickness. Not a typo -->
 				<include ref="InnerTrackerBarrelModuleUp.xml"/>
 			</module>
 
 			<module name="OuterTrackerBarrelModule_Out" vis="OuterTrackerModuleVis">
-				<module_envelope width="60.2*mm" length="60.2*mm"/>
+				<module_envelope width="60.2*mm" length="OuterTracker_Barrel_SensorLength"/>
 				<!-- NB: using InnerTracker defintion with 2mm thickness. Not a typo -->
 				<include ref="InnerTrackerBarrelModuleDown.xml"/>
 			</module>
 
-			<layer module="OuterTrackerBarrelModule_In" id="0" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="48*2" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="4.0*mm"/>
-				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="42"/>
-			</layer>
-			<layer module="OuterTrackerBarrelModule_In" id="1" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="48*2" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
-				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="42"/>
-			</layer>
+			<!-- <layer module="OuterTrackerBarrelModule_In" id="0" vis="OuterTrackerLayerVis" type="4"> -->
+			<!-- 	<rphi_layout phi_tilt="0*deg" nphi="48*2" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="4.0*mm"/> -->
+			<!-- 	<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="42"/> -->
+			<!-- </layer> -->
 
-			<layer module="OuterTrackerBarrelModule_In" id="2" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="52*2" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="4.0*mm"/>
-				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="84/2"/>
-			</layer>
-			<layer module="OuterTrackerBarrelModule_In" id="3" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="52*2" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
-				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="84/2"/>
-			</layer>
+            <layer module="OuterTrackerBarrelModule_In" id="0">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-21*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
 
-			<layer module="OuterTrackerBarrelModule_In" id="4" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="80*2" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="4.0*mm"/>
-				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="84/2"/>
-			</layer>
-			<layer module="OuterTrackerBarrelModule_In" id="5" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="80*2" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
-				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="84/2"/>
-			</layer>
+            <layer module="OuterTrackerBarrelModule_In" id="1">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-20*OuterTracker_Barrel_OriginalSensorLength - 3.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
 
-			<layer module="OuterTrackerBarrelModule_In" id="6" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="84*2" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="4.0*mm"/>
-				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="84/2"/>
-			</layer>
-			<layer module="OuterTrackerBarrelModule_In" id="7" vis="OuterTrackerLayerVis" type="4">
-				<rphi_layout phi_tilt="0*deg" nphi="84*2" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="4.0*mm"/>
-				<z_layout dr="0" z0="OuterTracker_Barrel_half_length - 30.1*mm" nz="84/2"/>
-			</layer>
+            <layer module="OuterTrackerBarrelModule_In" id="2">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-19*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="3">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-18*OuterTracker_Barrel_OriginalSensorLength - 3.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="4">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-17*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="5">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-16*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="6">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-15*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="7">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-14*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="8">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-13*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="9">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-12*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="10">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-11*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="11">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-10*OuterTracker_Barrel_OriginalSensorLength - 2.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="12">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-9*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="13">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-8*OuterTracker_Barrel_OriginalSensorLength - 2.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="14">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-7*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="15">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-6*OuterTracker_Barrel_OriginalSensorLength - 1.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="16">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-5*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="17">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-4*OuterTracker_Barrel_OriginalSensorLength - 1.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="18">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-3*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="19">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-2*OuterTracker_Barrel_OriginalSensorLength - 1.2 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="20">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-1*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="21">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="0*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="22">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="1*OuterTracker_Barrel_OriginalSensorLength + 1.2 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="23">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="2*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="24">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="3*OuterTracker_Barrel_OriginalSensorLength + 1.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="25">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="4*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="26">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="5*OuterTracker_Barrel_OriginalSensorLength + 1.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="27">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="6*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="28">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="7*OuterTracker_Barrel_OriginalSensorLength + 2.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="29">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="8*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="30">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="9*OuterTracker_Barrel_OriginalSensorLength + 2.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="31">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="10*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="32">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="11*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="33">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="12*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="34">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="13*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="35">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="14*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="36">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="15*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="37">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="16*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="38">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="17*OuterTracker_Barrel_OriginalSensorLength + 3.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="39">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="18*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="40">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="19*OuterTracker_Barrel_OriginalSensorLength + 3.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="41">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0" dr="8.0*mm"/>
+              <z_layout dr="0" z0="20*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="256">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-21*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="257">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-20*OuterTracker_Barrel_OriginalSensorLength - 3.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="258">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-19*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="259">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-18*OuterTracker_Barrel_OriginalSensorLength - 3.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="260">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-17*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="261">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-16*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="262">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-15*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="263">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-14*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="264">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-13*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="265">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-12*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="266">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-11*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="267">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-10*OuterTracker_Barrel_OriginalSensorLength - 2.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="268">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-9*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="269">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-8*OuterTracker_Barrel_OriginalSensorLength - 2.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="270">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-7*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="271">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-6*OuterTracker_Barrel_OriginalSensorLength - 1.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="272">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-5*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="273">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-4*OuterTracker_Barrel_OriginalSensorLength - 1.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="274">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-3*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="275">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-2*OuterTracker_Barrel_OriginalSensorLength - 1.2 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="276">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-1*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="277">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="0*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="278">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="1*OuterTracker_Barrel_OriginalSensorLength + 1.2 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="279">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="2*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="280">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="3*OuterTracker_Barrel_OriginalSensorLength + 1.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="281">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="4*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="282">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="5*OuterTracker_Barrel_OriginalSensorLength + 1.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="283">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="6*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="284">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="7*OuterTracker_Barrel_OriginalSensorLength + 2.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="285">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="8*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="286">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="9*OuterTracker_Barrel_OriginalSensorLength + 2.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="287">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="10*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="288">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="11*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="289">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="12*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="290">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="13*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="291">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="14*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="292">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="15*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="293">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="16*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="294">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="17*OuterTracker_Barrel_OriginalSensorLength + 3.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="295">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="18*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="296">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="19*OuterTracker_Barrel_OriginalSensorLength + 3.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="297">
+              <rphi_layout phi_tilt="0*deg" nphi="96" phi0="0" rc="OuterTracker_Barrel_radius_0 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="20*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="512">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-21*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="513">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-20*OuterTracker_Barrel_OriginalSensorLength - 3.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="514">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-19*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="515">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-18*OuterTracker_Barrel_OriginalSensorLength - 3.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="516">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-17*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="517">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-16*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="518">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-15*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="519">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-14*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="520">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-13*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="521">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-12*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="522">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-11*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="523">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-10*OuterTracker_Barrel_OriginalSensorLength - 2.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="524">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-9*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="525">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-8*OuterTracker_Barrel_OriginalSensorLength - 2.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="526">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-7*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="527">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-6*OuterTracker_Barrel_OriginalSensorLength - 1.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="528">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-5*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="529">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-4*OuterTracker_Barrel_OriginalSensorLength - 1.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="530">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-3*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="531">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-2*OuterTracker_Barrel_OriginalSensorLength - 1.2 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="532">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-1*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="533">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="0*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="534">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="1*OuterTracker_Barrel_OriginalSensorLength + 1.2 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="535">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="2*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="536">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="3*OuterTracker_Barrel_OriginalSensorLength + 1.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="537">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="4*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="538">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="5*OuterTracker_Barrel_OriginalSensorLength + 1.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="539">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="6*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="540">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="7*OuterTracker_Barrel_OriginalSensorLength + 2.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="541">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="8*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="542">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="9*OuterTracker_Barrel_OriginalSensorLength + 2.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="543">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="10*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="544">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="11*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="545">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="12*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="546">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="13*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="547">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="14*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="548">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="15*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="549">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="16*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="550">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="17*OuterTracker_Barrel_OriginalSensorLength + 3.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="551">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="18*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="552">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="19*OuterTracker_Barrel_OriginalSensorLength + 3.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="553">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1" dr="8.0*mm"/>
+              <z_layout dr="0" z0="20*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="768">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-21*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="769">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-20*OuterTracker_Barrel_OriginalSensorLength - 3.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="770">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-19*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="771">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-18*OuterTracker_Barrel_OriginalSensorLength - 3.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="772">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-17*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="773">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-16*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="774">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-15*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="775">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-14*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="776">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-13*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="777">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-12*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="778">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-11*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="779">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-10*OuterTracker_Barrel_OriginalSensorLength - 2.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="780">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-9*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="781">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-8*OuterTracker_Barrel_OriginalSensorLength - 2.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="782">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-7*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="783">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-6*OuterTracker_Barrel_OriginalSensorLength - 1.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="784">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-5*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="785">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-4*OuterTracker_Barrel_OriginalSensorLength - 1.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="786">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-3*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="787">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-2*OuterTracker_Barrel_OriginalSensorLength - 1.2 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="788">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-1*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="789">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="0*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="790">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="1*OuterTracker_Barrel_OriginalSensorLength + 1.2 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="791">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="2*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="792">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="3*OuterTracker_Barrel_OriginalSensorLength + 1.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="793">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="4*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="794">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="5*OuterTracker_Barrel_OriginalSensorLength + 1.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="795">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="6*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="796">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="7*OuterTracker_Barrel_OriginalSensorLength + 2.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="797">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="8*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="798">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="9*OuterTracker_Barrel_OriginalSensorLength + 2.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="799">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="10*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="800">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="11*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="801">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="12*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="802">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="13*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="803">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="14*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="804">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="15*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="805">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="16*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="806">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="17*OuterTracker_Barrel_OriginalSensorLength + 3.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="807">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="18*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="808">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="19*OuterTracker_Barrel_OriginalSensorLength + 3.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="809">
+              <rphi_layout phi_tilt="0*deg" nphi="104" phi0="0" rc="OuterTracker_Barrel_radius_1 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="20*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1024">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-21*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1025">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-20*OuterTracker_Barrel_OriginalSensorLength - 3.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1026">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-19*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1027">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-18*OuterTracker_Barrel_OriginalSensorLength - 3.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1028">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-17*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1029">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-16*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1030">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-15*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1031">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-14*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1032">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-13*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1033">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-12*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1034">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-11*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1035">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-10*OuterTracker_Barrel_OriginalSensorLength - 2.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1036">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-9*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1037">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-8*OuterTracker_Barrel_OriginalSensorLength - 2.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1038">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-7*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1039">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-6*OuterTracker_Barrel_OriginalSensorLength - 1.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1040">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-5*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1041">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-4*OuterTracker_Barrel_OriginalSensorLength - 1.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1042">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-3*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1043">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-2*OuterTracker_Barrel_OriginalSensorLength - 1.2 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1044">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-1*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1045">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="0*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1046">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="1*OuterTracker_Barrel_OriginalSensorLength + 1.2 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1047">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="2*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1048">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="3*OuterTracker_Barrel_OriginalSensorLength + 1.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1049">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="4*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1050">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="5*OuterTracker_Barrel_OriginalSensorLength + 1.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1051">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="6*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1052">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="7*OuterTracker_Barrel_OriginalSensorLength + 2.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1053">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="8*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1054">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="9*OuterTracker_Barrel_OriginalSensorLength + 2.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1055">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="10*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1056">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="11*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1057">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="12*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1058">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="13*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1059">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="14*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1060">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="15*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1061">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="16*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1062">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="17*OuterTracker_Barrel_OriginalSensorLength + 3.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1063">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="18*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1064">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="19*OuterTracker_Barrel_OriginalSensorLength + 3.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1065">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2" dr="8.0*mm"/>
+              <z_layout dr="0" z0="20*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1280">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-21*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1281">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-20*OuterTracker_Barrel_OriginalSensorLength - 3.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1282">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-19*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1283">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-18*OuterTracker_Barrel_OriginalSensorLength - 3.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1284">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-17*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1285">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-16*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1286">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-15*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1287">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-14*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1288">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-13*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1289">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-12*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1290">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-11*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1291">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-10*OuterTracker_Barrel_OriginalSensorLength - 2.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1292">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-9*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1293">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-8*OuterTracker_Barrel_OriginalSensorLength - 2.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1294">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-7*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1295">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-6*OuterTracker_Barrel_OriginalSensorLength - 1.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1296">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-5*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1297">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-4*OuterTracker_Barrel_OriginalSensorLength - 1.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1298">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-3*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1299">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-2*OuterTracker_Barrel_OriginalSensorLength - 1.2 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1300">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-1*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1301">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="0*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1302">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="1*OuterTracker_Barrel_OriginalSensorLength + 1.2 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1303">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="2*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1304">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="3*OuterTracker_Barrel_OriginalSensorLength + 1.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1305">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="4*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1306">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="5*OuterTracker_Barrel_OriginalSensorLength + 1.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1307">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="6*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1308">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="7*OuterTracker_Barrel_OriginalSensorLength + 2.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1309">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="8*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1310">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="9*OuterTracker_Barrel_OriginalSensorLength + 2.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1311">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="10*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1312">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="11*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1313">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="12*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1314">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="13*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1315">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="14*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1316">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="15*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1317">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="16*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1318">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="17*OuterTracker_Barrel_OriginalSensorLength + 3.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1319">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="18*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1320">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="19*OuterTracker_Barrel_OriginalSensorLength + 3.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1321">
+              <rphi_layout phi_tilt="0*deg" nphi="160" phi0="0" rc="OuterTracker_Barrel_radius_2 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="20*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1536">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-21*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1537">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-20*OuterTracker_Barrel_OriginalSensorLength - 3.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1538">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-19*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1539">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-18*OuterTracker_Barrel_OriginalSensorLength - 3.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1540">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-17*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1541">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-16*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1542">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-15*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1543">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-14*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1544">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-13*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1545">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-12*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1546">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-11*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1547">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-10*OuterTracker_Barrel_OriginalSensorLength - 2.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1548">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-9*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1549">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-8*OuterTracker_Barrel_OriginalSensorLength - 2.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1550">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-7*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1551">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-6*OuterTracker_Barrel_OriginalSensorLength - 1.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1552">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-5*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1553">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-4*OuterTracker_Barrel_OriginalSensorLength - 1.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1554">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-3*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1555">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-2*OuterTracker_Barrel_OriginalSensorLength - 1.2 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1556">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-1*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1557">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="0*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1558">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="1*OuterTracker_Barrel_OriginalSensorLength + 1.2 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1559">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="2*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1560">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="3*OuterTracker_Barrel_OriginalSensorLength + 1.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1561">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="4*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1562">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="5*OuterTracker_Barrel_OriginalSensorLength + 1.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1563">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="6*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1564">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="7*OuterTracker_Barrel_OriginalSensorLength + 2.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1565">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="8*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1566">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="9*OuterTracker_Barrel_OriginalSensorLength + 2.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1567">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="10*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1568">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="11*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1569">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="12*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1570">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="13*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1571">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="14*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1572">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="15*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1573">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="16*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1574">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="17*OuterTracker_Barrel_OriginalSensorLength + 3.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1575">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="18*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1576">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered" dr="8.0*mm"/>
+              <z_layout dr="0" z0="19*OuterTracker_Barrel_OriginalSensorLength + 3.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1577">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3" dr="8.0*mm"/>
+              <z_layout dr="0" z0="20*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1792">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-21*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1793">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-20*OuterTracker_Barrel_OriginalSensorLength - 3.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1794">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-19*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1795">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-18*OuterTracker_Barrel_OriginalSensorLength - 3.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1796">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-17*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1797">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-16*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1798">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-15*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1799">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-14*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1800">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-13*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1801">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-12*OuterTracker_Barrel_OriginalSensorLength - 2.8 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1802">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-11*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1803">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-10*OuterTracker_Barrel_OriginalSensorLength - 2.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1804">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-9*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1805">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-8*OuterTracker_Barrel_OriginalSensorLength - 2.1 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1806">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-7*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1807">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-6*OuterTracker_Barrel_OriginalSensorLength - 1.6 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1808">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-5*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1809">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-4*OuterTracker_Barrel_OriginalSensorLength - 1.3 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1810">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-3*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1811">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-2*OuterTracker_Barrel_OriginalSensorLength - 1.2 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1812">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="-1*OuterTracker_Barrel_OriginalSensorLength - 0.0 - OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1813">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="0*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1814">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="1*OuterTracker_Barrel_OriginalSensorLength + 1.2 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1815">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="2*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1816">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="3*OuterTracker_Barrel_OriginalSensorLength + 1.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1817">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="4*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1818">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="5*OuterTracker_Barrel_OriginalSensorLength + 1.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1819">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="6*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1820">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="7*OuterTracker_Barrel_OriginalSensorLength + 2.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1821">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="8*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1822">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="9*OuterTracker_Barrel_OriginalSensorLength + 2.6 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1823">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="10*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1824">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="11*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1825">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="12*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1826">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="13*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1827">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="14*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1828">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="15*OuterTracker_Barrel_OriginalSensorLength + 2.8 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1829">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="16*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1830">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="17*OuterTracker_Barrel_OriginalSensorLength + 3.1 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1831">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="18*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1832">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3_z_staggered + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="19*OuterTracker_Barrel_OriginalSensorLength + 3.3 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
+
+            <layer module="OuterTrackerBarrelModule_In" id="1833">
+              <rphi_layout phi_tilt="0*deg" nphi="168" phi0="0" rc="OuterTracker_Barrel_radius_3 + OuterTracker_Barrel_DoubleLayer_Gap" dr="8.0*mm"/>
+              <z_layout dr="0" z0="20*OuterTracker_Barrel_OriginalSensorLength + 0.0 + OuterTracker_Barrel_SensorLength/2*mm" nz="1"/>
+            </layer>
 
 		</detector>
 
@@ -255,3 +1910,4 @@
 	</plugins>
 
 </lccdd>
+
